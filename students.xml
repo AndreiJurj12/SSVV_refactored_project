@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities>
+    <student ID="1">
+        <Name>Ana</Name>
+        <Group>221</Group>
+    </student>
+    <student ID="2">
+        <Name>Maria</Name>
+        <Group>222</Group>
+    </student>
+    <student ID="4">
+        <Name>Ion</Name>
+        <Group>227</Group>
+    </student>
+    <student ID="5">
+        <Name>John</Name>
+        <Group>911</Group>
+    </student>
+</entities>

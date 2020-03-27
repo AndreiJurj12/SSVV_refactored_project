@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities>
+    <assignment ID="4b07d8d5-beaa-4f0a-b1d1-c628f9c92985">
+        <Description>description</Description>
+        <Deadline>7</Deadline>
+        <Startline>5</Startline>
+    </assignment>
+    <assignment ID="56fd0d69-081d-497c-9083-37f2c63de75d">
+        <Description>description</Description>
+        <Deadline>7</Deadline>
+        <Startline>5</Startline>
+    </assignment>
+    <assignment ID="265f1d87-b097-4bab-8aa6-c3f70afbaa8f">
+        <Description>description</Description>
+        <Deadline>7</Deadline>
+        <Startline>5</Startline>
+    </assignment>
+    <assignment ID="dbe54d42-fa7f-4593-b79e-e411e1061439">
+        <Description>description</Description>
+        <Deadline>7</Deadline>
+        <Startline>5</Startline>
+    </assignment>
+</entities>
