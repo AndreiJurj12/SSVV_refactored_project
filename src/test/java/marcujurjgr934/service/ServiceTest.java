@@ -10,13 +10,14 @@ import marcujurjgr934.validation.AssignmentValidator;
 import marcujurjgr934.validation.GradeValidator;
 import marcujurjgr934.validation.StudentValidator;
 import marcujurjgr934.validation.Validator;
-import org.junit.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.UUID;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class ServiceTest {
     private Service service;
@@ -158,4 +159,173 @@ public class ServiceTest {
         assertEquals(response, -1);
     }
 
+
+    @Test
+    public void saveStudent_TC15() {
+        String id = "id1";
+        String name = "name1";
+        int group = 1;
+        String email = "email1";
+        String professorName = "professorName1";
+
+        int returnCode = service.saveStudent(id, name, group, email, professorName);
+        assertEquals(-1, returnCode);
+    }
+
+    @Test
+    public void saveStudent_TC16() {
+        String id = "id1";
+        String name = "name1";
+        int group = 110;
+        String email = "email1";
+        String professorName = "professorName1";
+
+        int returnCode = service.saveStudent(id, name, group, email, professorName);
+        assertEquals(-1, returnCode);
+    }
+
+    @Test
+    public void saveStudent_TC17() {
+        String id = "id1";
+        String name = "name1";
+        int group = 111;
+        String email = "email1";
+        String professorName = "professorName1";
+
+        int returnCode = service.saveStudent(id, name, group, email, professorName);
+        assertEquals(0, returnCode);
+    }
+
+    @Test
+    public void saveStudent_TC18() {
+        String id = "id1";
+        String name = "name1";
+        int group = 112;
+        String email = "email1";
+        String professorName = "professorName1";
+
+        int returnCode = service.saveStudent(id, name, group, email, professorName);
+        assertEquals(0, returnCode);
+    }
+
+    @Test
+    public void saveStudent_TC19() {
+        String id = "id1";
+        String name = "name1";
+        int group = 936;
+        String email = "email1";
+        String professorName = "professorName1";
+
+        int returnCode = service.saveStudent(id, name, group, email, professorName);
+        assertEquals(0, returnCode);
+    }
+
+    @Test
+    public void saveStudent_TC20() {
+        String id = "id1";
+        String name = "name1";
+        int group = 937;
+        String email = "email1";
+        String professorName = "professorName1";
+
+        int returnCode = service.saveStudent(id, name, group, email, professorName);
+        assertEquals(0, returnCode);
+    }
+
+    @Test
+    public void saveStudent_TC21() {
+        String id = "id1";
+        String name = "name1";
+        int group = 938;
+        String email = "email1";
+        String professorName = "professorName1";
+
+        int returnCode = service.saveStudent(id, name, group, email, professorName);
+        assertEquals(-1, returnCode);
+    }
+
+    @Test
+    public void saveStudent_TC22() {
+        String id = "id1";
+        String name = "name1";
+        int group = Integer.MAX_VALUE - 1;
+        String email = "email1";
+        String professorName = "professorName1";
+
+        int returnCode = service.saveStudent(id, name, group, email, professorName);
+        assertEquals(-1, returnCode);
+    }
+
+    @Test
+    public void saveStudent_TC23() {
+        String id = "id1";
+        String name = "name1";
+        int group = Integer.MAX_VALUE;
+        String email = "email1";
+        String professorName = "professorName1";
+
+        int returnCode = service.saveStudent(id, name, group, email, professorName);
+        assertEquals(-1, returnCode);
+    }
+
+
+    @Test
+    public void saveStudent_TC24() {
+        String id = "id1";
+        String name = "name1";
+        int group = Integer.MAX_VALUE + 1;
+        String email = "email1";
+        String professorName = "professorName1";
+
+        int returnCode = service.saveStudent(id, name, group, email, professorName);
+        assertEquals(-1, returnCode);
+    }
+
+    @Test
+    public void saveStudent_TC25() {
+        String id = "i";
+        String name = "name1";
+        int group = 500;
+        String email = "email1";
+        String professorName = "professorName1";
+
+        int returnCode = service.saveStudent(id, name, group, email, professorName);
+        assertEquals(0, returnCode);
+    }
+
+    @Test
+    public void saveStudent_TC26() {
+        String id = "id1";
+        String name = "n";
+        int group = 500;
+        String email = "email1";
+        String professorName = "professorName1";
+
+        int returnCode = service.saveStudent(id, name, group, email, professorName);
+        assertEquals(0, returnCode);
+    }
+
+    @Test
+    public void saveStudent_TC27() {
+        String id = "id1";
+        String name = "name1";
+        int group = 500;
+        String email = "e";
+        String professorName = "professorName1";
+
+        int returnCode = service.saveStudent(id, name, group, email, professorName);
+        assertEquals(0, returnCode);
+    }
+
+    @Test
+    public void saveStudent_TC28() {
+        String id = "id1";
+        String name = "name1";
+        int group = 500;
+        String email = "email1";
+        String professorName = "p";
+
+        int returnCode = service.saveStudent(id, name, group, email, professorName);
+        assertEquals(0, returnCode);
+    }
 }
