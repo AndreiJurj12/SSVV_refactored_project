@@ -71,7 +71,13 @@ public class UI {
             return;
         }
 
-        int resultCode = service.saveStudent(id, name, group);
+        System.out.println("Introduce student's email:");
+        String email = scanner.nextLine();
+
+        System.out.println("Introduce professor name:");
+        String professorName = scanner.nextLine();
+
+        int resultCode = service.saveStudent(id, name, group, email, professorName);
         if (resultCode == 0) {
             System.out.println("Student successfully added");
         }
@@ -213,7 +219,13 @@ public class UI {
             return;
         }
 
-        int resultCode = service.updateStudent(id, newName, newGroup);
+        System.out.println("Introduce student's email:");
+        String newEmail = scanner.nextLine();
+
+        System.out.println("Introduce professor name:");
+        String newProfessorName = scanner.nextLine();
+
+        int resultCode = service.updateStudent(id, newName, newGroup, newEmail, newProfessorName);
         if (resultCode == 0) {
             System.out.println("Student successfully updated");
         }

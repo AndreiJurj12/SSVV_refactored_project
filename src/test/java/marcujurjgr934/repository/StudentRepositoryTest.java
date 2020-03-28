@@ -22,7 +22,7 @@ public class StudentRepositoryTest {
         List<Student> currentStudents = new ArrayList<Student>((Collection<? extends Student>) studentRepository.findAll());
         assertEquals(0, currentStudents.size());
 
-        Student student = new Student("1", "John", 920);
+        Student student = new Student("1", "John", 920, "john@gmail.com", "Teacher1");
         studentRepository.save(student);
 
         currentStudents = new ArrayList<Student>((Collection<? extends Student>) studentRepository.findAll());
@@ -38,7 +38,7 @@ public class StudentRepositoryTest {
         List<Student> currentStudents = new ArrayList<Student>((Collection<? extends Student>) studentRepository.findAll());
         assertEquals(0, currentStudents.size());
 
-        Student student = new Student("1", "John", 0);
+        Student student = new Student("1", "John", 0, "john@gmail.com", "Teacher1");
         Student result = studentRepository.save(student);
 
         fail("Method should have thrown before");

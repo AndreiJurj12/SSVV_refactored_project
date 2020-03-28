@@ -35,8 +35,8 @@ public class Service {
     /**
      * @return 0- if the given entity is saved; -1 if the validation failed; -2 if the id was already found
      **/
-    public int saveStudent(String id, String name, int group) {
-        Student student = new Student(id, name, group);
+    public int saveStudent(String id, String name, int group, String email, String professorName) {
+        Student student = new Student(id, name, group, email, professorName);
         try {
             Student result = studentXmlRepo.save(student);
             if (result == null) {
@@ -123,8 +123,8 @@ public class Service {
     /**
      * @return 0 if the given entity is updated; -1 if the validation failed; -2 if the id was not found;
      **/
-    public int updateStudent(String id, String newName, int newGroup) {
-        Student studentNou = new Student(id, newName, newGroup);
+    public int updateStudent(String id, String newName, int newGroup, String newEmail, String newProfessorName) {
+        Student studentNou = new Student(id, newName, newGroup, newEmail, newProfessorName);
         try {
             Student result = studentXmlRepo.update(studentNou);
             if (result == null) {

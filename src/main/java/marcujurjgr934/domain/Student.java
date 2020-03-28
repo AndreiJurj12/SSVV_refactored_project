@@ -6,11 +6,15 @@ public class Student implements HasID<String> {
     private String idStudent;
     private String name;
     private int group;
+    private String email;
+    private String professorName;
 
-    public Student(String idStudent, String name, int group) {
+    public Student(String idStudent, String name, int group, String email, String professorName) {
         this.idStudent = idStudent;
         this.name = name;
         this.group = group;
+        this.email = email;
+        this.professorName = professorName;
     }
 
     @Override
@@ -35,10 +39,7 @@ public class Student implements HasID<String> {
         this.group = group;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" + "idStudent=" + idStudent + ", name='" + name + '\'' + ", group=" + group + '}';
-    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -51,6 +52,33 @@ public class Student implements HasID<String> {
     @Override
     public int hashCode() {
         return Objects.hash(idStudent);
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getProfessorName() {
+        return professorName;
+    }
+
+    public void setProfessorName(String professorName) {
+        this.professorName = professorName;
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "Student{" +
+                "idStudent='" + idStudent + '\'' +
+                ", name='" + name + '\'' +
+                ", group=" + group +
+                ", email='" + email + '\'' +
+                ", professorName='" + professorName + '\'' +
+                '}';
     }
 }
 
