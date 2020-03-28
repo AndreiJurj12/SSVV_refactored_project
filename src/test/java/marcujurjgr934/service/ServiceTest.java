@@ -21,8 +21,6 @@ import static org.junit.Assert.*;
 public class ServiceTest {
     private Service service;
 
-
-
     @Before
     public void initializeFields () {
         Validator<Student> studentValidator = new StudentValidator();
@@ -57,6 +55,94 @@ public class ServiceTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void saveStudent_TC1() {
+        int returnCode = service.saveStudent(null, "name1", 500, "email1", "professorName1");
+        assertEquals(returnCode, -1);
+    }
+
+    @Test
+    public void saveStudent_TC2() {
+        int returnCode = service.saveStudent("", "name1", 500, "email1", "professorName1");
+        assertEquals(returnCode, -1);
+    }
+
+    @Test
+    public void saveStudent_TC3() {
+        int returnCode = service.saveStudent("id1", "name1", 100, "email1", "professorName1");
+        assertEquals(returnCode, -1);
+    }
+
+    @Test
+    public void saveStudent_TC4() {
+        int returnCode = service.saveStudent("id1", "name1", 1000, "email1", "professorName1");
+        assertEquals(returnCode, -1);
+    }
+
+    @Test
+    public void saveStudent_TC5() {
+        int returnCode = service.saveStudent("id1", null, 500, "email1", "professorName1");
+        assertEquals(returnCode, -1);
+    }
+
+    @Test
+    public void saveStudent_TC6() {
+        int returnCode = service.saveStudent("id1", "", 500, "email1", "professorName1");
+        assertEquals(returnCode, -1);
+    }
+
+    @Test
+    public void saveStudent_TC7() {
+        int returnCode = service.saveStudent("id1", "name1", 500, null, "professorName1");
+        assertEquals(returnCode, -1);
+    }
+
+    @Test
+    public void saveStudent_TC8() {
+        int returnCode = service.saveStudent("id1", "name1", 500, "", "professorName1");
+        assertEquals(returnCode, -1);
+    }
+
+    @Test
+    public void saveStudent_TC9() {
+        int returnCode = service.saveStudent("id1", "name1", 500, "email1", null);
+        assertEquals(returnCode, -1);
+    }
+
+    @Test
+    public void saveStudent_TC10() {
+        int returnCode = service.saveStudent("id1", "name1", 500, "email1", "");
+        assertEquals(returnCode, -1);
+    }
+
+    @Test
+    public void saveStudent_TC11() {
+        int returnCode = service.saveStudent("id1", "name1", -1, "email1", "professorName1");
+        assertEquals(returnCode, -1);
+    }
+
+    @Test
+    public void saveStudent_TC12() {
+        int returnCode = service.saveStudent("id1", "name1", 500, "email1", "professorName1");
+        assertEquals(returnCode, 0);
+    }
+
+    @Test
+    public void saveStudent_TC13() {
+        int returnCode = service.saveStudent("id1", "name1", 500, "email1", "professorName1");
+        assertEquals(returnCode, 0);
+
+        returnCode = service.saveStudent("id1", "name2", 500, "email2", "professorName2");
+        assertEquals(returnCode, -2);
+    }
+
+    @Test
+    public void saveStudent_TC14() {
+        int returnCode = service.saveStudent("id1", "name1", 0, "email1", "professorName1");
+        assertEquals(returnCode, -1);
+    }
+
 
     @Test
     public void saveAssignmentSuccess() {
