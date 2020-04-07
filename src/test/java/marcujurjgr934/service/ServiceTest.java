@@ -328,4 +328,82 @@ public class ServiceTest {
         int returnCode = service.saveStudent(id, name, group, email, professorName);
         assertEquals(0, returnCode);
     }
+
+    @Test
+    public void saveAssignment_TC1() {
+        String new_id = null;
+        int response = service.saveAssignment(new_id, "description1", 7, 5);
+        assertEquals(response, -1);
+    }
+
+    @Test
+    public void saveAssignment_TC2() {
+        String new_id = "";
+        int response = service.saveAssignment(new_id, "description1", 7, 5);
+        assertEquals(response, -1);
+    }
+
+    @Test
+    public void saveAssignment_TC3() {
+        String new_id = "1";
+        int response = service.saveAssignment(new_id, null, 7, 5);
+        assertEquals(response, -1);
+    }
+
+    @Test
+    public void saveAssignment_TC4() {
+        String new_id = "1";
+        int response = service.saveAssignment(new_id, "", 7, 5);
+        assertEquals(response, -1);
+    }
+
+    @Test
+    public void saveAssignment_TC5() {
+        String new_id = "1";
+        int response = service.saveAssignment(new_id, "description1", 0, 5);
+        assertEquals(response, -1);
+    }
+
+    @Test
+    public void saveAssignment_TC6() {
+        String new_id = "1";
+        int response = service.saveAssignment(new_id, "description1", 15, 5);
+        assertEquals(response, -1);
+    }
+
+    @Test
+    public void saveAssignment_TC7() {
+        String new_id = "1";
+        int response = service.saveAssignment(new_id, "description1", 7, 0);
+        assertEquals(response, -1);
+    }
+
+    @Test
+    public void saveAssignment_TC8() {
+        String new_id = "1";
+        int response = service.saveAssignment(new_id, "description1", 7, 15);
+        assertEquals(response, -1);
+    }
+
+    @Test
+    public void saveAssignment_TC9() {
+        String new_id = "1";
+        int response = service.saveAssignment(new_id, "description1", 4, 5);
+        assertEquals(response, -1);
+    }
+
+    @Test
+    public void saveAssignment_TC10() {
+        String new_id = "1";
+        service.saveAssignment(new_id, "description1", 7, 5);
+        int response = service.saveAssignment(new_id, "description1", 7, 5);
+        assertEquals(response, -2);
+    }
+
+    @Test
+    public void saveAssignment_TC11() {
+        String new_id = "1";
+        int response = service.saveAssignment(new_id, "description1", 7, 5);
+        assertEquals(response, 0);
+    }
 }
