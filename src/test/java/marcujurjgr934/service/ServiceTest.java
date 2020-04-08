@@ -144,22 +144,6 @@ public class ServiceTest {
         assertEquals(returnCode, -1);
     }
 
-
-    @Test
-    public void saveAssignmentSuccess() {
-        String new_id = "1";
-        int response = service.saveAssignment(new_id, "description", 7, 5);
-        assertEquals(response, 0);
-    }
-
-    @Test
-    public void saveAssignmentFailure()  {
-        String new_id = "1";
-        int response = service.saveAssignment(new_id, "description", 4, 5);
-        assertEquals(response, -1);
-    }
-
-
     @Test
     public void saveStudent_TC15() {
         String id = "id1";
@@ -327,6 +311,20 @@ public class ServiceTest {
 
         int returnCode = service.saveStudent(id, name, group, email, professorName);
         assertEquals(0, returnCode);
+    }
+
+    @Test
+    public void saveAssignmentSuccess() {
+        String new_id = "1";
+        int response = service.saveAssignment(new_id, "description", 7, 5);
+        assertEquals(response, 0);
+    }
+
+    @Test
+    public void saveAssignmentFailure()  {
+        String new_id = "1";
+        int response = service.saveAssignment(new_id, "description", 4, 5);
+        assertEquals(response, -1);
     }
 
     @Test
