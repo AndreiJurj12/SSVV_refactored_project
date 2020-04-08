@@ -92,7 +92,6 @@ public class ServiceIntegrationTest {
     @Test
     public void saveGradeSuccess() {
         /*We have special data already for student and assignment*/
-        String id = "id1";
         String idStudent = this.idStudentForGrade;
         String idAssignment = this.idAssignmentForGrade;
 
